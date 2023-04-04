@@ -9,7 +9,7 @@ TEST_GUILD_ID = Server ID here
 TOKEN = Discord Bot Token here
 CLIENT_ID = Bot's Application ID here
 ```
-3) run the following command in the bot's folder in terminal / CMD: `npm i discord.js rest fs` to install the dependencies
+3) run the following command in the bot's folder in terminal / CMD: `npm i discord.js rest fs dotenv` to install the dependencies
 4) run `node index` to start the bot.
 
 
