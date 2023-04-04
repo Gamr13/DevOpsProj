@@ -13,9 +13,8 @@ module.exports = {
         const kickMember = await interaction.guild.members.fetch(kickUser.id);
         const channel = interaction.channel;
 
-        if (!interaction.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return await interaction.reply({ content: "Error: You don't have permission to use this command.", ephemeral: true });
-        if (!kickMember) return await interaction.reply({ content: 'Error: User is not in the server.', ephemeral: true});
-        if (!kickMember.kickable) return await interaction.reply({ content: "Error: This person is above you in roles.", ephemeral: true});
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.KickMembers)) return await interaction.reply({ content: "Error: You don't have permission to use this command.", ephemeral: false });
+        if (!kickMember.kickable) return await interaction.reply({ content: "Error: This person is above you in roles.", ephemeral: false});
 
         let reason = interaction.options.getString('reason');
         if (!reason) reason = "No reason given.";

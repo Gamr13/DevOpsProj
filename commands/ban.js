@@ -15,9 +15,9 @@ module.exports = {
         const banMember = await interaction.guild.members.fetch(banUser.id);
         const channel = interaction.channel;
 
-        if (!interaction.member.permissions.has(PermissionsBitField.Flags.BanMembers)) return await interaction.reply({ content: "Error: You don't have permission to use this command.", ephemeral: true });   //[check #2]
-        if (!banMember) return await interaction.reply({ content: 'Error: User is not in the server.', ephemeral: true});   //Error check, if member is not in server, bot won't crash.
-        if (!banMember.kickable) return await interaction.reply({ content: "Error: This person is above you in roles.", ephemeral: true});  //[Check #3]
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.BanMembers)) return await interaction.reply({ content: "Error: You don't have permission to use this command.", ephemeral: false });   //[check #2]
+        if (!banMember) return await interaction.reply({ content: 'Error: User is not in the server.', ephemeral: false});   //Error check, if member is not in server, bot won't crash.
+        if (!banMember.kickable) return await interaction.reply({ content: "Error: This person is above you in roles.", ephemeral: false});  //[Check #3]
 
         let reason = interaction.options.getString('reason');
         if (!reason) reason = "No reason given.";
